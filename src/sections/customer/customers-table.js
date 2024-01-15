@@ -68,7 +68,10 @@ export const CustomersTable = (props) => {
                   Phone
                 </TableCell>
                 <TableCell>
-                  Signed Up
+                  Licsense expiry
+                </TableCell> 
+                <TableCell>
+                  Accounts linked
                 </TableCell>
               </TableRow>
             </TableHead>

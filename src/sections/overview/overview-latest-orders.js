@@ -61,7 +61,7 @@ export const OverviewLatestOrders = (props) => {
                     <TableCell>
                       {order.ref}
                     </TableCell>
-                    <TableCell>
+                    <TableCell contentEditable >
                       {order.customer.name}
                     </TableCell>
                     <TableCell>

@@ -85,7 +85,7 @@ export const Layout = (props) => {
                 sx={{ color: '#15B79E' }}
                 target="_blank"
               >
-                Devias Kit
+                Cycles Trader
               </Box>
             </Typography>
             <Typography
@@ -93,7 +93,7 @@ export const Layout = (props) => {
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              A professional trading platform for everyone to use and enjoy.
             </Typography>
             <img
               alt=""
