@@ -29,10 +29,10 @@ export const OverviewTasksProgress = (props) => {
               gutterBottom
               variant="overline"
             >
-              Task Progress
+              Task Orders
             </Typography>
             <Typography variant="h4">
-              {value}%
+              54 
             </Typography>
           </Stack>
           <Avatar
@@ -48,10 +48,10 @@ export const OverviewTasksProgress = (props) => {
           </Avatar>
         </Stack>
         <Box sx={{ mt: 3 }}>
-          <LinearProgress
+          {/* <LinearProgress
             value={value}
             variant="determinate"
-          />
+          /> */}
         </Box>
       </CardContent>
     </Card>

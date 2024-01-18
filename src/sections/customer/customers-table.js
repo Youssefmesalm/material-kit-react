@@ -5,6 +5,7 @@ import {
   Box,
   Card,
   Checkbox,
+  IconButton,
   Stack,
   Table,
   TableBody,
@@ -16,6 +17,7 @@ import {
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { getInitials } from 'src/utils/get-initials';
+import {  Visibility } from '@mui/icons-material';
 
 export const CustomersTable = (props) => {
   const {
@@ -34,7 +36,11 @@ export const CustomersTable = (props) => {
 
   const selectedSome = (selected.length > 0) && (selected.length < items.length);
   const selectedAll = (items.length > 0) && (selected.length === items.length);
-
+  const editIcon = (
+    <IconButton>
+      <Visibility color="primary" />
+    </IconButton>
+  );
   return (
     <Card>
       <Scrollbar>
@@ -68,7 +74,13 @@ export const CustomersTable = (props) => {
                   Phone
                 </TableCell>
                 <TableCell>
-                  Signed Up
+                  Licsense expiry
+                </TableCell> 
+                <TableCell>
+                  Accounts linked
+                </TableCell>
+                <TableCell>
+                  View As
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -120,6 +132,12 @@ export const CustomersTable = (props) => {
                     </TableCell>
                     <TableCell>
                       {createdAt}
+                    </TableCell>
+                    <TableCell>
+                      {customer.accounts}
+                    </TableCell>
+                    <TableCell>
+                      {editIcon}
                     </TableCell>
                   </TableRow>
                 );

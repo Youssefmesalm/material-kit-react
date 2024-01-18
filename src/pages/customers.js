@@ -26,7 +26,8 @@ const data = [
     createdAt: subDays(subHours(now, 7), 1).getTime(),
     email: 'carson.darrin@devias.io',
     name: 'Carson Darrin',
-    phone: '304-428-3097'
+    phone: '304-428-3097',
+    accounts: '1',
   },
   {
     id: '5e887b209c28ac3dd97f6db5',
@@ -40,7 +41,8 @@ const data = [
     createdAt: subDays(subHours(now, 1), 2).getTime(),
     email: 'fran.perez@devias.io',
     name: 'Fran Perez',
-    phone: '712-351-5711'
+    phone: '712-351-5711',
+    accounts: '4',
   },
   {
     id: '5e887b7602bdbc4dbb234b27',
@@ -54,7 +56,8 @@ const data = [
     createdAt: subDays(subHours(now, 4), 2).getTime(),
     email: 'jie.yan.song@devias.io',
     name: 'Jie Yan Song',
-    phone: '770-635-2682'
+    phone: '770-635-2682' ,
+    accounts: '2',
   },
   {
     id: '5e86809283e28b96d2d38537',
@@ -68,7 +71,8 @@ const data = [
     createdAt: subDays(subHours(now, 11), 2).getTime(),
     email: 'anika.visser@devias.io',
     name: 'Anika Visser',
-    phone: '908-691-3242'
+    phone: '908-691-3242',
+    accounts: '1',
   },
   {
     id: '5e86805e2bafd54f66cc95c3',
@@ -82,7 +86,8 @@ const data = [
     createdAt: subDays(subHours(now, 7), 3).getTime(),
     email: 'miron.vitold@devias.io',
     name: 'Miron Vitold',
-    phone: '972-333-4106'
+    phone: '972-333-4106',
+    accounts: '3',
   },
   {
     id: '5e887a1fbefd7938eea9c981',
@@ -199,7 +204,7 @@ const Page = () => {
     <>
       <Head>
         <title>
-          Customers | Devias Kit
+          Customers | Cycles Trader
         </title>
       </Head>
       <Box

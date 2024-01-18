@@ -6,6 +6,7 @@ import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import { AttachMoney, ListAlt, Recycling } from '@mui/icons-material';
 import { SvgIcon } from '@mui/material';
 
 export const items = [
@@ -19,6 +20,33 @@ export const items = [
     )
   },
   {
+    title: 'Trade',
+    path: '/Trade',
+    icon: (
+      <SvgIcon fontSize="small">
+        <AttachMoney />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Cycles',
+    path: '/Cycles',
+    icon: (
+      <SvgIcon fontSize="small">
+        <Recycling />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Orders',
+    path: '/Orders',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ListAlt />
+      </SvgIcon>
+    )
+  },
+  {
     title: 'Customers',
     path: '/customers',
     icon: (
@@ -27,15 +55,7 @@ export const items = [
       </SvgIcon>
     )
   },
-  {
-    title: 'Companies',
-    path: '/companies',
-    icon: (
-      <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
-      </SvgIcon>
-    )
-  },
+
   {
     title: 'Account',
     path: '/account',

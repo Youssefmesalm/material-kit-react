@@ -4,6 +4,8 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios' // some http client lib
+const BaseUrl = process.env.REACT_APP_API_URL
 import {
   Alert,
   Box,
@@ -25,7 +27,7 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
+      email: 'demo@patrick.io',
       password: 'Password123!',
       submit: null
     },
@@ -42,6 +44,7 @@ const Page = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
+        await axios.get('/admin', { values }  )
         await auth.signIn(values.email, values.password);
         router.push('/');
       } catch (err) {
@@ -71,7 +74,7 @@ const Page = () => {
     <>
       <Head>
         <title>
-          Login | Devias Kit
+          Login | Cycles Trader
         </title>
       </Head>
       <Box
@@ -124,10 +127,7 @@ const Page = () => {
                 label="Email"
                 value="email"
               />
-              <Tab
-                label="Phone Number"
-                value="phoneNumber"
-              />
+          
             </Tabs>
             {method === 'email' && (
               <form
@@ -193,12 +193,12 @@ const Page = () => {
                   sx={{ mt: 3 }}
                 >
                   <div>
-                    You can use <b>demo@devias.io</b> and password <b>Password123!</b>
+                    You can use <b>demo@patrick.io</b> and password <b>Password123!</b>
                   </div>
                 </Alert>
               </form>
             )}
-            {method === 'phoneNumber' && (
+            {/* {method === 'phoneNumber' && (
               <div>
                 <Typography
                   sx={{ mb: 1 }}
@@ -210,7 +210,7 @@ const Page = () => {
                   To prevent unnecessary costs we disabled this feature in the demo.
                 </Typography>
               </div>
-            )}
+            )} */}
           </div>
         </Box>
       </Box>

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
-
+import axios from 'axios';
+const BaseUrl = process.env.REACT_APP_API_URL
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
   SIGN_IN: 'SIGN_IN',
@@ -57,7 +58,7 @@ const reducer = (state, action) => (
 
 // The role of this context is to propagate authentication state through the App tree.
 
-export const AuthContext = createContext({ undefined });
+export const AuthContext = createContext();
 
 export const AuthProvider = (props) => {
   const { children } = props;
@@ -128,7 +129,7 @@ export const AuthProvider = (props) => {
   };
 
   const signIn = async (email, password) => {
-    if (email !== 'demo@devias.io' || password !== 'Password123!') {
+    if (email !== 'demo@patrick.io' || password !== 'Password123!') {
       throw new Error('Please check your email and password');
     }
 
@@ -152,7 +153,27 @@ export const AuthProvider = (props) => {
   };
 
   const signUp = async (email, name, password) => {
-    throw new Error('Sign up is not implemented');
+    try {
+      await axios.post( "https://automatic-space-bassoon-4g5pvxgp7927rgq-8000.app.github.dev/users", {
+        name,
+        password
+      });
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    }
   };
 
   const signOut = () => {

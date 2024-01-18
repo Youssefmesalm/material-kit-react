@@ -34,6 +34,7 @@ const Page = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
+      
         await auth.signUp(values.email, values.name, values.password);
         router.push('/');
       } catch (err) {

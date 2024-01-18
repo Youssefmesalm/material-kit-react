@@ -1,13 +1,17 @@
 import Head from 'next/head';
+import { subDays, subHours } from 'date-fns';
 import { Box, Container, Unstable_Grid2 as Grid, Tab, Tabs } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { OverviewBudget } from 'src/sections/overview/overview-budget';
+import { OverviewLatestOrders } from 'src/sections/overview/overview-latest-orders';
+import { OverviewLatestProducts } from 'src/sections/overview/overview-latest-products';
+import { OverviewSales } from 'src/sections/overview/overview-sales';
 import { OverviewTasksProgress } from 'src/sections/overview/overview-tasks-progress';
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTotalProfit } from 'src/sections/overview/overview-total-profit';
-import Cycles from 'src/sections/overview/CyclesGrid';
+import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
+
 import { useCallback, useState } from 'react';
-import TradePanel from 'src/components/Trade';
 import Orders from 'src/sections/overview/OrdersGrid';
 const now = new Date();
 
@@ -25,7 +29,7 @@ const Page = () => {
   <>
     <Head>
       <title>
-        Overview | Cycles Trader
+        Orders | Cycles Trader
       </title>
     </Head>
     <Box
@@ -84,43 +88,12 @@ const Page = () => {
               value="$15k"
             />
           </Grid>
-
-         <Grid
-            xs={12}
-            lg={12}
-          >
-            <Tabs
-              onChange={handleMethodChange}
-              scrollButtons="auto"
-              value={method}
-              variant="scrollable"
-            >
-               <Tab
-                label="Trade"
-                value="trade"
-              />
-              <Tab
-                label="Cycles"
-                value="cycles"
-              />
-              <Tab
-                label="Orders"
-                value="orders"
-              />
-             
-              <Tab
-                label="Wallets"
-                value="wallets"
-              />
-            </Tabs>
-          </Grid>
+         
           <Grid
             xs={12}
             lg={12}
           >
-           {method === 'cycles' && <Cycles/>} 
-          {method === 'orders' && <Orders/>}
-          {method === 'trade' && <TradePanel/>}
+            <Orders />
           </Grid>
 
         </Grid>
